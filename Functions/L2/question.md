@@ -1,21 +1,24 @@
-Functions in Go can take zero or more arguments.
+Unit Test Lessons
+Up until now, all the coding lessons in this course have been testing you based on your code's console output (what's printed). For example, a lesson might expect your code (in conjunction with the code we provide) to print something like:
 
-To make code easier to read, the variable type comes after the variable name.
+Price: 0.2
+NumMessages: 18
 
-For example, the following function:
+If your code prints that exact output, you pass. If it doesn't, you fail.
 
-```bash
-func sub(x int, y int) int {
-return x-y
-}
-```
+A New Type of Lesson
+Going forward, you'll also encounter a new type of lesson: unit tests. If you've taken a course with us before, you'll know what we are referring to. But in case you haven't, a unit test is just an automated program that tests a small "unit" of code. Usually just a function or two. The editor will have tabs: the "main.go" file containing your code, and the "main_test.go" file containing the unit tests.
 
-Accepts two integer parameters and returns another integer.
+These new unit-test-style lessons will test your code's functionality rather than its output. Our tests will call functions in your code with different arguments, and expect specific return values. If your code returns the correct values, you pass. If it doesn't, you fail.
 
-Here, func sub(x int, y int) int is known as the "function signature".
+There are two reasons for this change:
 
+It's more realistic. In the real world, you'll be writing unit tests and running them against your code to make sure it works as expected.
+You can run and debug your code with fmt.Println statements, and leave those print statements in when you submit. Unlike the output-based lessons, you won't have to remove your fmt.Println statements to pass.
 Assignment
-We often will need to manipulate strings in our messaging app. For example, adding some personalization by using a customer's name within a template. The concat function should take two strings and smash them together.
+Complete the getMonthlyPrice function. It accepts a tier (string) as input and returns the monthly price for that tier in pennies. Here are the prices in dollars:
 
-hello + world = helloworld
-Fix the function signature of concat to reflect its behavior.
+"basic" - $100.00
+"premium" - $150.00
+"enterprise" - $500.00
+Convert the prices from dollars to pennies. If the given tier doesn't match any of the above, return 0 pennies.
